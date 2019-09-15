@@ -1,16 +1,17 @@
-$primary-color:rgb(132, 135, 135);
-$secondary-color:rgb(165, 229, 133);
+$primary-color:rgb(76, 66, 92);
+$secondary-color:rgb(130, 216, 216);
 $third-color: rgb(24, 51, 13);
-$nav-scroll-footer: rgb(75, 76, 74);
+$nav-scroll-footer: rgb(61, 53, 74);
 //$hero-image: url(../dist/img/background.jpg);
 
 @mixin easeOut {
-    transition: all 0.5s ease-out; 
+    transition: all 0.6s ease-out; 
 }
 
 @mixin sectionHeading {
     h2 {
-        font-size: 3.5rem;
+        font-family: 'Patua One', cursive;
+        font-size: 3rem;
         margin: 2rem 0;
         color: $third-color;
 
@@ -20,17 +21,8 @@ $nav-scroll-footer: rgb(75, 76, 74);
 
     }
 }
-@keyframes animateOpacity {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
 
-@mixin opacityAnimation {
-    -webkit-animation: animateOpacity 1s ease-out; /* Safari 4+ */
-    -moz-animation:    animateOpacity 1s ease-out; /* Fx 5+ */
-    -o-animation:      animateOpacity 1s ease-out; /* Opera 12+ */
-    animation:         animateOpacity 1s ease-out; /* IE 10+, Fx 29+ */
-}
+
 /*General styles*/
 * {
     box-sizing: border-box;
@@ -52,91 +44,65 @@ section {
     
 }
 
-
-.break-line {
+/*Header section*/
+.moving-name{
+    font-family: 'Patua One', cursive;
     display: flex;
-    width: 60%;
-    justify-content: space-around;
+    position: absolute;
+    height: 8%;
+    width: 15%;
+    justify-content: center;
     align-items: center;
-    margin: 2rem auto;
-        
-       
-            
-        
-    .circle{
-        width: 0.8rem;
-        height: 0.8rem;
-        border-radius: 50%;
-        background-color: $secondary-color;
-        
+    color: white;
+    font-size: 1.5rem;
+    animation: animatedNameOnLoad;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    top: 0%;
+    left:0%;
+    
+
+    .text-secondary{
+        margin-left: 10px;
+        color: $secondary-color;
+
     }
+    &.scroll1{
+        animation: animatedNameOnScroll;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }    
+}
+@keyframes animatedNameOnLoad {
+    0%{ }
+    100%{ font-size: 5rem; width: 100%; height: 18%; top: 20%}
+}
+@keyframes animatedNameOnScroll {
+    0%{}
+    100%{ height: 8%; width: 15%; top:0%; left:0%; font-size: 1.5rem; }
 }
 
-
-
-
-
-/*Header section*/
 
 header {
     position: fixed;   
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
+    height: 4rem;
     z-index: 1;
-
-    h2{
-        display: none;
-        
-    }
-    
-    
-
-    &.scroll {
-        background-color: $nav-scroll-footer;
-        height: 4rem;
-        justify-content: flex-end;
-        @include opacityAnimation;
-
-        
-
-        h2{
-            position: fixed;
-            display: block;
-            top: 18px;
-            left: 25px;
-            color: $secondary-color;
-            text-transform: uppercase;
-        }
-
-        nav {
-            margin-top: 0rem;
-            justify-content: space-around;
-            
-            li.active{
-                color: $secondary-color;
-            }
-
-
-            a:hover{
-                color: $secondary-color;
-                @include easeOut;
-                
-            }
-        }
-        
-    }
     
     
     nav {
+        font-family: 'Poppins', sans-serif;
+        width: 40%;
         display: flex;
-        justify-content: space-evenly;
-        width: 60%;
-        margin-top: 3rem;
+        justify-content: space-around;
+        margin-left: 20rem;
         list-style: none;
         
-
         a{
             color: #fff;
             text-transform: uppercase;
@@ -147,15 +113,31 @@ header {
                 @include easeOut;
             }
         }
+    } 
+
+    &.scroll {
+        background-color: $nav-scroll-footer;
+        @include easeOut;
+        nav {
+            li.active{
+                color: $secondary-color;
+            }
+            a:hover{
+                color: $secondary-color;
+                @include easeOut;
+                
+            }
+        }
+        
     }
-
-
+    
 
 }
+
+
+
 @media (max-width: 935px) {
     header{
-        
-        
         nav {
             position: fixed;
             top: 1rem;
@@ -174,9 +156,7 @@ header {
             &.show{
                 visibility: visible;
                 @include easeOut;
-                @include opacityAnimation;
             }
-            
         }
         .menu-btn{
             position: fixed;
@@ -217,30 +197,24 @@ header {
         }
         &.scroll{
             nav{
-                top: 5rem;
-                
-                
+                top: 5rem;    
             }
             h2{
                 font-size: 1.5rem;
                 width: 50%;
-                justify-content: flex-start;
-
-                
+                justify-content: flex-start;    
             }
-        }
-        
-         
+        }     
     }
-    
 }
+
 @media (max-width: 576px){
     header.scroll h2{
         font-size: 1.2rem;
         top: 20px;
     }
-
 }
+
 /*Hero section*/
 .hero{
     position: relative;
@@ -248,6 +222,8 @@ header {
     text-align: center;
     min-height: 100vh;
     color: #fff;
+    width: 100%;
+   
 
     .hero-image{
         position: absolute;
@@ -267,33 +243,58 @@ header {
         height: 100%;
         z-index: -1;
         background-size: cover;
-        background-color: rgba($primary-color, 0.9);    
+        background-color: rgba($primary-color, 0.8);    
     }
     .hero-content{
-        @include opacityAnimation;
         h1{
-            
-            font-size: 4rem;
-            margin: -1.5rem 0 1.2rem 0;
-            span{
-                color: $secondary-color;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            //margin: 0 0 1.2rem 0;
+            display: inline-block;
+            margin: 0 1rem 0 0;
+            padding-top: 5rem;
+        }
+        .button-row{
+            //height: 30%;
+            width: 100%;
+            //border: 1px red solid;
+            margin: 10rem auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            //flex-direction: row;
+            align-items: center;
+            .button{
+                width: 150px;
+                height: 50px;
+                border: thin white solid;
+                border-radius: 20px;
+                text-align: center;
+                padding-top: 13px;
+                text-decoration: none;
+                animation: button;
+                animation-delay: 0.2s;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+                &:hover{
+                    border: 2px $secondary-color solid;
+                    transform: scale(1.2) perspective(1px);
+                    transition: all 0.5s ease;
+                }
+
+                @keyframes button{
+                    0% {opacity: 0}
+                    100% {opacity: 1}
+                }
+                 
+
+
             }
         }
-
-        h2{
-            
-            font-size: 2rem;
-            margin: 0 0 1.2rem 0;
-            display: inline-block;
-            margin: 0 2rem 0 0;
-        } 
         
     } 
 
     a{
-        @include opacityAnimation;
         color: #fff;
-        @include opacityAnimation;
 
         &:hover{
             color: $secondary-color;
@@ -310,18 +311,16 @@ header {
         .hero-content{
             h1{
                 width: 100%;
-                font-size: 3rem;
-            }
-            h2{
-                width: 100%;
                 font-size: 1.5rem;
-            }
-            
+            }   
         }
     } 
-    
-
 }
+
+
+
+
+
 /*About me section*/
 .about-me{
     padding-top: 2rem;
@@ -329,84 +328,66 @@ header {
     @include sectionHeading;
 
     .grid{
-        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        width: 80%;
         display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
         justify-content: center;
-        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-top: 3rem;
         
         .image-container{
+            width: 20%;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-right: 2rem;
 
 
             .image{
-                width: 15rem;
-                height: 15rem;
-                border-radius: 50%;
+                width: 11rem;
+                height: 12rem;
+                border-radius: 5%;
                 border: solid 3px $secondary-color;
             }
             
         }
-        .about-content{
-            h3{
+        .about{
+            
+            width: 60%;
+            p{
                 color: $third-color;
-                line-height: 2;
+                line-height: 1.5;
                 font-size: 1.5rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 20px;
-
             }
-            .about-info-container{
-                display: flex;
-                justify-content: space-evenly;
-                width: 100%;
-                font-size: 1.2rem;
-                margin-top: 20px;
+        }
+        .toolbox-container{
+            width: 80%;
+            height: 22rem;
+            border: thin solid rgba(51,122,183,.1);
+            box-shadow: 0 12px 12px 0 #d3d3d3;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            padding: 0 1.2rem 1.2rem 1.2rem;
+
+            h3 {
+                border-bottom: 2px solid #0a0a0a;
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+                padding-bottom: 10px;
                 
-                .about-text{
-                    color: black;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-basis: 45%;
-                    line-height: 1.5;
-                    text-align: justify;
-                    text-justify: inter-word;
-                }
-    
-                .toolbox{
-                    color: black;
-                    display: flex;
-                    justify-content: start;
-                    flex-direction: column;
-                    flex-basis: 45%;
-                    border: solid 2px $secondary-color;
-                    border-radius: 5px;
-                    padding: 10px;
-                    box-shadow: 4px 8px 8px #888888;
-
-                    .toolbox-header{
-                        font-weight: 700;
-                        padding: 5px 0;
-                        font-size: 1.3rem;
-                    }
-                    .toolbox-row{
-                        padding: 5px 0;
-                        line-height: 1.5;
-
-                        span{
-                            font-weight: 600;
-                        }
-                    }
-
-
+            }
+            
+            li{
+                list-style: none;
+                margin-bottom: 0.8rem;
+                .tool-name{
+                    font-weight: 900;
+                    font-size: 1.3rem;
                 }
             }
+            
             
         }
     }
@@ -414,50 +395,78 @@ header {
 
 /*My work*/
 
-.my-work{
+.my-projects{
     padding-top: 2rem;
-    background-color:rgb(195, 196, 194);
+    background-color:#f6f6f6;
     @include sectionHeading;
 
-    .grid{
-        width: 100%;
+    .projects-container{
+        width: 90%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         margin-top: 2rem;
+    
+            
 
-        .project{
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
-            width: 18rem;
-            height: 10rem;
+
+        .single-card{
+            width: 320px;
+            height: 420px;
+            display: block;
+            margin-bottom: 40px;
+            text-align: left;
+            border: thin solid rgba(51,122,183,.1);
+            border-radius: 5px;
+            box-shadow: 0 12px 12px 0 #d3d3d3;
+            box-sizing: border-box;
             background-color: #fff;
-            border-radius: 20px;
-            margin: 1.5rem;
-            padding: 1rem;
-            &:hover {
-                border: solid 7px $secondary-color;
+            text-decoration: none;
+
+            .project-image{
+                height: 50%;
+                width: 100%;
+                overflow: hidden;
             }
+            .divider{
+                height: 2%;
+                width: 100%;
+                background-color: $secondary-color;
 
-            a{
-                text-decoration: none;
-                color: $primary-color;
-                font-size: 2rem;
-                text-align: center;
+            }
+            .project-info{
+                padding: 15px;
+                width: 100%;
+                height: 50%;
+                font-family: 'Poppins', sans-serif;
+                color: black;
+                h4{
+                    font-size: 25px;
+                    margin-bottom: .5rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    color: $primary-color;
+                    
+                    
 
-                &:hover{
-                    color: $secondary-color;
+                }
+                p{
+                    font-weight: 300;
+                    font-family: Open Sans,sans-serif;
+                    font-size: 1.1rem;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    line-height: 1.5rem;
                 }
             }
-
-            p{
-                padding: 10px;
-                color: $third-color;
-            }
         }
+        
     }
+
+
+            
+        
+    
 
 }
 
@@ -470,75 +479,35 @@ header {
 
     .contacts {
         display: flex;
-        justify-content: start;
-        flex-direction: column;
+        justify-content: space-around;
         width: 70%;
+        margin-top: 3rem;
 
-        .contact-row{
-            display: flex;
-            width: 10rem;
-            height: 5rem;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+        a{
+            text-decoration: none;
+            i{
+                color: rgb(92, 95, 99);
+                display: flex;
+                justify-content: center;
 
-            .icon-first{
-                display: inline-block;
-                margin-right: 1rem;
-                width: 50px;
-                
-                i{
-                    color: $secondary-color;
-                    display: flex;
-                    justify-content: center;
-                    
-                }
-
-            }
-            .icon-second{
-                display: inline-block;
-                margin-right: 1rem;
-                width: 50px;
-                
-                a{
-                    text-decoration: none;
-
-                    i{
-                        color: $secondary-color;
-                        display: flex;
-                        justify-content: center;
-                    }
-
-                    &:hover i{
-                        color: $primary-color;
-                        @include easeOut;
-                    }
-
+                &:hover{
+                    color: $primary-color;
+                    @include easeOut;
                 }
                 
-                
-
             }
-            .contact-text div {
-                box-sizing: border-box;
-                width: 20rem;
-                height: 3rem;
-                margin-bottom: -1rem;
-                font-size: 2rem;
-                color: $third-color;
-                
-            }
-        }
+        }        
         
     }
 }
 
 footer {
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(75, 76, 74);
-    padding: 30px 0;
+    background-color: $nav-scroll-footer;
+    padding: 50px 0;
     color: #fff;
 
     p{

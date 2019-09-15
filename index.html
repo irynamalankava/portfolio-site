@@ -8,21 +8,24 @@
     <link rel="stylesheet" href="dist/css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
         integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title>This is my Portfolio</title>
 </head>
 
 <body>
+    <div class = "moving-name">Iryna  <span class="text-secondary">Malankava</span></div>
     <header>
-        <h2>Iryna Malankava</h2>
+        <!--<h2>Iryna <span>Malankava</span></h2>-->
         <nav class="menu">
             <li class="menu-item">
                 <a href="#home">Home</a>
             </li>
             <li class="menu-item">
-                <a href="#about-me">About Me</a>
+                <a href="#about">About Me</a>
             </li>
             <li class="menu-item">
-                <a href="#work">My Work</a>
+                <a href="#projects">My Projects</a>
             </li>
             <li class="menu-item">
                 <a href="#contacts">How To Reach Me</a>
@@ -35,127 +38,114 @@
         </div>
     </header>
     <section id="home" class="hero">
-        <div class="hero-image" style="background-image: url(dist/img/background7.jpg);"></div>
+        <div class="hero-image" style="background-image: url(dist/img/background2.jpg);"></div>
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>
-                Iryna <span class="text-secondary">Malankava</span>
-            </h1>
-            <h2>
                 Front-End Developer
-            </h2>
+            </h1>
             <a href="#">
                 <i id="linkedIn1" class="fab fa-linkedin fa-3x"></i>
             </a>
+            <div class="button-row">
+                <a href="#toolbox" class="button">My Toolbox <i class="fas fa-arrow-down"></i></a>
+                <a href="#projects" class="button">My Projects <i class="fas fa-arrow-down"></i></a>
+            </div>
         </div>
     </section>
-
-    <div class="break-line">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-
-    <section id="about-me" class="about-me">
+    <section id="about" class="about-me">
         <h2>About <span>Me</span></h2>
         <div class="grid">
             <div class="image-container">
-                <div class="image" style="background-image: url(dist/img/portrait_large.jpeg)"></div>
+                <div class="image"></div>
             </div>
-            <div class="about-content">
-                <h3>Hi! I’m Iryna. Nice to see you on my page!</h3>
-                <div class="about-info-container">
-                    <div class="about-text">As a software developer I would like to be a part of a team and contribute
-                        to projects that empower and improve people lives. I enjoy building web
-                        applications through the FreeCodeCamp curriculum, an open source coding
-                        community. On top of FreeCodeCamp, I take other online courses, listen to
-                        engineering podcasts, read tech blogs in order to help me develop a growth mindset,
-                        improve and polish my coding skills.
-                    </div>
-                    <div class="toolbox">
-                        <div class="toolbox-header">Toolbox:</div>
-                        <div class="toolbox-row"><span>Languages and Frameworks:</span> JavaScript(ES6+), HTML5, CSS3, Bootstrap, Sass, ReactJS, JQuery,
-                            MySql, Firebase</div>
-                        <div class="toolbox-row"><span>IDE:</span> Microsoft VS Code</div>
-                        <div class="toolbox-row"><span>VCS:</span> Git/Github</div>
-                        <div class="toolbox-row"><span>Debugger:</span> Chrome DevTools</div>
-                    </div>
+            <div class="about">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo. illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo.
+                </p>
+            </div>
+            <div id="toolbox" class="toolbox-container">
+                <div>
+                    <h3 class="toolbox-header">Toolbox:</h3>
+                    <ul class="toolbox">
+                        <li><span class="tool-name">Programming:​</span> JavaScript, TypeScript, HTML5, CSS3, SQL</li>
+                        <li><span class="tool-name">Frameworks & libraries:</span>  ​React.js, JQuery, Bootstrap, Sass, Jest, axios.js</li>
+                        <li><span class="tool-name">Process & Methodologies:</span> TDD, OOP, functional programming</li>
+                        <li><span class="tool-name">Software & tools:</span> ​VS Code, MS Visual Studio, Git</li>
+                        <li><span class="tool-name">Databases:</span> ​MySql, Firebase</li>
+                        <li><span class="tool-name">Debugger:</span> Chrome DevTools</li>
+                    </ul>
                 </div>
-
             </div>
         </div>
 
     </section>
-    <div class="break-line">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-    <section id="work" class="my-work">
-        <h2>My <span>Work</span></h2>
-        <div class="grid">
-            <div class="project">
-                <a href="#">Color Game</a>
-                <p>HTML5, CCS3, ES5 </p>
-            </div>
-            <div class="project">
-                <a href="#">Marketing Page</a>
-                <p>HTML5, CCS3</p>
-            </div>
-            <div class="project">
-                <a href="#">ToDo List</a>
-                <p>HTML5, CSS3, JQuery</p>
-            </div>
-            <div class="project">
-                <a href="#">Portfolio Site</a>
-                <p>HTML5, CCS3, Sass, ES8</p>
-            </div>
+    <section id="projects" class="my-projects">
+        <h2>My <span>Projects</span></h2>
+        <div class="projects-container">
+            <a href="#" class="single-card">
+                <div class="project-image"></div>
+                <div class="divider"></div>
+                <div class="project-info">
+                    <h4 class="project-name">Calculator</h4>
+                    <p>A fully functional calculator that can chain mathematical operations together. Built using ReactJS, HTML5, and CSS3.</p>
+                </div>
+            </a>
+            <a href="#" class="single-card">
+                <div class="project-image"></div>
+                <div class="divider"></div>
+                <div class="project-info">
+                    <h4 class="project-name">Calculator</h4>
+                    <p>A fully functional calculator that can chain mathematical operations together. Built using ReactJS, HTML5, and CSS3.</p>
+                </div>
+            </a>
+            <a href="#" class="single-card">
+                <div class="project-image"></div>
+                <div class="divider"></div>
+                <div class="project-info">
+                    <h4 class="project-name">Calculator</h4>
+                    <p>A fully functional calculator that can chain mathematical operations together. Built using ReactJS, HTML5, and CSS3.</p>
+                </div>
+            </a>
+            <a href="#" class="single-card">
+                <div class="project-image"></div>
+                <div class="divider"></div>
+                <div class="project-info">
+                    <h4 class="project-name">Calculator</h4>
+                    <p>A fully functional calculator that can chain mathematical operations together. Built using ReactJS, HTML5, and CSS3.</p>
+                </div>
+            </a>
+            <a href="#" class="single-card">
+                <div class="project-image"></div>
+                <div class="divider"></div>
+                <div class="project-info">
+                    <h4 class="project-name">Calculator</h4>
+                    <p>A fully functional calculator that can chain mathematical operations together. Built using ReactJS, HTML5, and CSS3.</p>
+                </div>
+            </a>
+            <a href="#" class="single-card">
+                <div class="project-image"></div>
+                <div class="divider"></div>
+                <div class="project-info">
+                    <h4 class="project-name">Calculator</h4>
+                    <p>A fully functional calculator that can chain mathematical operations together. Built using ReactJS, HTML5, and CSS3.</p>
+                </div>
+            </a>
+            
         </div>
     </section>
-
-    <div class="break-line">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-
-
-
     <section id="contacts" class="contact-me">
         <h2>Contact <span>Me</span></h2>
-        <div class="contacts">
-            <div class="contact-row">
-                <div class="icon-first"><i class="fas fa-envelope fa-3x"></i></div>
-                <div class="contact-text">
-                    <div>iryna.hbiz@gmail.com</div>
-                </div>
-            </div>
-            <div class="contact-row">
-                <div class="icon-second">
-                    <a href="#"><i class="fab fa-linkedin fa-3x"></i></a>
-                </div>
-                <div class="contact-text">
-                    <div>Find me on LinkedIn</div>
-                </div>
-            </div>
+        <div class="contacts">    
+            <a href="mailto:iryna.hbiz@gmail.com" id="email" 
+                title="External link to my Email account">
+                <i class="fas fa-envelope fa-3x"></i></a>
+            <a href="#" id="github" title="External link to my Github account">
+                <i class="fab fa-github fa-3x"></i></a>
+            <a href="#" id="linkedin" title="External link to my LinkedIn account">
+                <i class="fab fa-linkedin fa-3x"></i></a>
         </div>
     </section>
 
