@@ -140,6 +140,20 @@ header {
     .hero .hero-content h2 {
       font-family: 'Poppins', sans-serif;
       font-size: 2.5rem; }
+    .hero .hero-content .contacts {
+      display: flex;
+      justify-content: space-around;
+      width: 70%;
+      margin-top: 3rem; }
+      .hero .hero-content .contacts a {
+        text-decoration: none; }
+        .hero .hero-content .contacts a i {
+          color: white;
+          display: flex;
+          justify-content: center; }
+          .hero .hero-content .contacts a i:hover {
+            color: #82d8d8;
+            transition: all 0.6s ease-out; }
     .hero .hero-content .button-row {
       width: 100%;
       margin: 10rem auto 0 auto;
@@ -307,20 +321,6 @@ header {
     color: #18330d; }
     .contact-me h2 span {
       color: #82d8d8; }
-  .contact-me .contacts {
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    margin-top: 3rem; }
-    .contact-me .contacts a {
-      text-decoration: none; }
-      .contact-me .contacts a i {
-        color: #5c5f63;
-        display: flex;
-        justify-content: center; }
-        .contact-me .contacts a i:hover {
-          color: #4c425c;
-          transition: all 0.6s ease-out; }
 
 footer {
   font-family: 'Poppins', sans-serif;
