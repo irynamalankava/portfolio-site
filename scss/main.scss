@@ -1,31 +1,9 @@
-$primary-color:rgb(76, 66, 92);
-$secondary-color:rgb(130, 216, 216);
-$third-color: rgb(24, 51, 13);
-$nav-scroll-footer: rgb(61, 53, 74);
-//$hero-image: url(../dist/img/background.jpg);
+@import 'config';
+@import 'media';
 
 html{scroll-behavior:smooth}
 
-@mixin easeOut {
-    transition: all 0.6s ease-out; 
-}
-
-@mixin sectionHeading {
-    h2 {
-        font-family: 'Patua One', cursive;
-        font-size: 3rem;
-        margin: 2rem 0;
-        color: $third-color;
-
-        span{
-            color: $secondary-color;
-        }
-
-    }
-}
-
-
-/*General styles*/
+//General styles
 * {
     box-sizing: border-box;
     margin: 0;
@@ -45,6 +23,8 @@ section {
 
     
 }
+
+//HEADER
 
 header {
     font-family: 'Poppins', sans-serif;
@@ -69,20 +49,17 @@ header {
         }
     }
     
-    
     nav {  
-        
-        width: 30%;
+        width: 40%;
         display: flex;
         justify-content: space-around;
-        margin-left: 20rem;
+        margin-left: 12rem;
         list-style: none;
-        
         
         a{
             color: #fff;
-            
             text-decoration: none;
+
             &.active{
                 color: $secondary-color;
             }
@@ -91,99 +68,16 @@ header {
                 color: $secondary-color;
                 @include easeOut;
             }
-        }
-        
+        }    
     } 
 
     &.scroll {
         background-color: $nav-scroll-footer;
     }
-    
-
 }
 
+//HERO
 
-
-@media (max-width: 935px) {
-    header{
-        nav {
-            position: fixed;
-            top: 1rem;
-            right: 3rem;
-            display: flex; 
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
-            width: 200px;
-            height: 250px;
-            z-index: 3;
-            background-color: $nav-scroll-footer; 
-            visibility: hidden;
-            border: solid $secondary-color 3px;
-            border-radius: 10px;
-            &.show{
-                visibility: visible;
-                @include easeOut;
-            }
-        }
-        .menu-btn{
-            position: fixed;
-            top: 22px;
-            right: 25px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            cursor: pointer;
-            @include easeOut;
-            z-index: 1;
-            
-    
-            .btn-line{
-                width: 28px;
-                height: 3px;
-                margin: 0 0 5px 0;
-                @include easeOut;
-                background-color: #fff;
-            }
-            &.close{
-                transform: rotate(180deg);
-                top: 18px;
-        
-                .btn-line{
-                    &:nth-child(1){
-                        transform: rotate(45deg) translate(5px, 4px)
-                    }
-                    &:nth-child(2){
-                        opacity: 0;
-                    }
-                    &:nth-child(3){
-                        transform: rotate(-45deg) translate(7px, -6px)
-                    
-                    }
-                }
-            }
-        }
-        &.scroll{
-            nav{
-                top: 5rem;    
-            }
-            h2{
-                font-size: 1.5rem;
-                width: 50%;
-                justify-content: flex-start;    
-            }
-        }     
-    }
-}
-
-@media (max-width: 576px){
-    header.scroll h2{
-        font-size: 1.2rem;
-        top: 20px;
-    }
-}
-
-/*Hero section*/
 .hero{
     position: relative;
     justify-content: center;
@@ -324,11 +218,8 @@ header {
     } 
 }
 
+//ABOUT ME
 
-
-
-
-/*About me section*/
 .about-me{
     padding-top: 2rem;
 
@@ -404,7 +295,7 @@ header {
     }
 }
 
-/*My work*/
+//PROJECTS
 
 .my-projects{
     padding-top: 2rem;
@@ -497,7 +388,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: $nav-scroll-footer;
-    padding: 50px 0;
+    padding: 40px 0;
     color: #fff;
 
     p{

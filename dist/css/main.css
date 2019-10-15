@@ -1,7 +1,93 @@
+@media screen and (max-width: 500px) {
+  #header-name {
+    font-size: 1.2rem;
+    top: 20px; }
+  #name {
+    font-size: 3.5rem; }
+  #button-row .button {
+    width: 130px;
+    height: 45px; } }
+
+@media screen and (max-width: 768px) {
+  header #nav {
+    position: fixed;
+    top: 3rem;
+    right: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 180px;
+    height: 250px;
+    z-index: 3;
+    background-color: #3d354a;
+    visibility: hidden;
+    border: solid #82d8d8 3px;
+    border-radius: 10px; }
+    header #nav.show {
+      visibility: visible;
+      transition: all 0.6s ease-out; }
+  header .menu-btn {
+    position: fixed;
+    top: 22px;
+    right: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.6s ease-out;
+    z-index: 1; }
+    header .menu-btn .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      transition: all 0.6s ease-out;
+      background-color: #fff; }
+    header .menu-btn.close {
+      transform: rotate(180deg);
+      top: 18px; }
+      header .menu-btn.close .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 4px); }
+      header .menu-btn.close .btn-line:nth-child(2) {
+        opacity: 0; }
+      header .menu-btn.close .btn-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px); }
+  header.scroll nav {
+    top: 5rem; }
+  header.scroll h2 {
+    font-size: 1.5rem;
+    width: 50%;
+    justify-content: flex-start; }
+  section:nth-of-type(2) {
+    padding: 20px 0px; }
+  section:nth-of-type(3) {
+    padding: 20px 0px; }
+  #about .grid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #about .grid .image-container {
+      width: 200px;
+      height: 200px;
+      margin-right: 0;
+      margin-top: -2rem; }
+    #about .grid .about {
+      width: 100%; }
+      #about .grid .about p {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        text-align: center; }
+    #about .grid #toolbox {
+      width: 100%;
+      margin-bottom: 2rem; }
+      #about .grid #toolbox li {
+        font-size: 1rem; }
+        #about .grid #toolbox li .tool-name {
+          font-size: 1.2rem; } }
+
 html {
   scroll-behavior: smooth; }
 
-/*General styles*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,10 +122,10 @@ header {
     header #header-name span {
       color: #82d8d8; }
   header nav {
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
-    margin-left: 20rem;
+    margin-left: 12rem;
     list-style: none; }
     header nav a {
       color: #fff;
@@ -52,63 +138,6 @@ header {
   header.scroll {
     background-color: #3d354a; }
 
-@media (max-width: 935px) {
-  header nav {
-    position: fixed;
-    top: 1rem;
-    right: 3rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    width: 200px;
-    height: 250px;
-    z-index: 3;
-    background-color: #3d354a;
-    visibility: hidden;
-    border: solid #82d8d8 3px;
-    border-radius: 10px; }
-    header nav.show {
-      visibility: visible;
-      transition: all 0.6s ease-out; }
-  header .menu-btn {
-    position: fixed;
-    top: 22px;
-    right: 25px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-    transition: all 0.6s ease-out;
-    z-index: 1; }
-    header .menu-btn .btn-line {
-      width: 28px;
-      height: 3px;
-      margin: 0 0 5px 0;
-      transition: all 0.6s ease-out;
-      background-color: #fff; }
-    header .menu-btn.close {
-      transform: rotate(180deg);
-      top: 18px; }
-      header .menu-btn.close .btn-line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 4px); }
-      header .menu-btn.close .btn-line:nth-child(2) {
-        opacity: 0; }
-      header .menu-btn.close .btn-line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px); }
-  header.scroll nav {
-    top: 5rem; }
-  header.scroll h2 {
-    font-size: 1.5rem;
-    width: 50%;
-    justify-content: flex-start; } }
-
-@media (max-width: 576px) {
-  header.scroll h2 {
-    font-size: 1.2rem;
-    top: 20px; } }
-
-/*Hero section*/
 .hero {
   position: relative;
   justify-content: center;
@@ -210,7 +239,6 @@ header {
       width: 100%;
       font-size: 1.5rem; } }
 
-/*About me section*/
 .about-me {
   padding-top: 2rem; }
   .about-me h2 {
@@ -270,7 +298,6 @@ header {
           font-weight: 900;
           font-size: 1.3rem; }
 
-/*My work*/
 .my-projects {
   padding-top: 2rem;
   background-color: #f6f6f6; }
@@ -344,7 +371,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: #3d354a;
-  padding: 50px 0;
+  padding: 40px 0;
   color: #fff; }
   footer p {
     text-transform: uppercase; }
