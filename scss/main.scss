@@ -47,6 +47,7 @@ section {
 }
 
 header {
+    font-family: 'Poppins', sans-serif;
     position: fixed; 
     display: flex;
     justify-content: flex-end;
@@ -54,11 +55,24 @@ header {
     width: 100%;
     height: 4rem;
     z-index: 1;
+    text-transform: uppercase;
+
+    #header-name {
+        position: absolute;
+        left: 15px;
+        visibility: hidden;
+        color: white;
+        font-size: 1 rem;
+
+        span{
+            color: $secondary-color;
+        }
+    }
     
     
     nav {  
-        font-family: 'Poppins', sans-serif;
-        width: 40%;
+        
+        width: 30%;
         display: flex;
         justify-content: space-around;
         margin-left: 20rem;
@@ -67,7 +81,7 @@ header {
         
         a{
             color: #fff;
-            text-transform: uppercase;
+            
             text-decoration: none;
             &.active{
                 color: $secondary-color;
@@ -205,13 +219,20 @@ header {
         justify-content: center;
         align-items: center;
 
-        h1{
+        .moving-name {
             font-family: 'Patua One', cursive;
             font-size: 4.5rem;
             letter-spacing: 3px;
             margin-bottom: 0.5rem;
             span{
                 color: $secondary-color;
+            }
+            &.name-header{
+                &.scroll1{
+                    animation: animatedNameOnScroll;
+                    animation-duration: 3s;
+                    animation-fill-mode: forwards;
+                }     
             }
         }
         h2{
