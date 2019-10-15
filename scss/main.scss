@@ -369,8 +369,11 @@ header {
             }
         }
         .toolbox-container{
-            width: 80%;
-            height: 22rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 65%;
+            /*height: 22rem;*/
             border: thin solid rgba(51,122,183,.1);
             box-shadow: 0 12px 12px 0 #d3d3d3;
             font-size: 1.2rem;
@@ -378,6 +381,7 @@ header {
             padding: 0 1.2rem 1.2rem 1.2rem;
 
             h3 {
+                width: 100%;
                 border-bottom: 2px solid #0a0a0a;
                 margin-top: 1rem;
                 margin-bottom: 1.5rem;
