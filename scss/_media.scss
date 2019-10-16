@@ -21,10 +21,19 @@
             position: fixed;
             top: 3rem;
             right: 4rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex; 
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
+            -webkit-box-pack: space-evenly; 
+                -ms-flex-pack: space-evenly; 
+                    justify-content: space-evenly;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             width: 180px;
             height: 250px;
             z-index: 3;
@@ -41,9 +50,16 @@
             position: fixed;
             top: 22px;
             right: 25px;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            flex-direction: column;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             cursor: pointer;
             @include easeOut;
             z-index: 1;
@@ -57,18 +73,24 @@
                 background-color: #fff;
             }
             &.close{
-                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                        transform: rotate(180deg);
                 top: 18px;
         
                 .btn-line{
                     &:nth-child(1){
-                        transform: rotate(45deg) translate(5px, 4px)
+                        -webkit-transform: rotate(45deg) translate(5px, 4px);
+                            -ms-transform: rotate(45deg) translate(5px, 4px);
+                                transform: rotate(45deg) translate(5px, 4px)
                     }
                     &:nth-child(2){
                         opacity: 0;
                     }
                     &:nth-child(3){
-                        transform: rotate(-45deg) translate(7px, -6px)
+                        -webkit-transform: rotate(-45deg) translate(7px, -6px);
+                            -ms-transform: rotate(-45deg) translate(7px, -6px);
+                                transform: rotate(-45deg) translate(7px, -6px)
                     
                     }
                 }
@@ -81,7 +103,9 @@
             h2{
                 font-size: 1.5rem;
                 width: 50%;
-                justify-content: flex-start;    
+                -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                        justify-content: flex-start;    
             }
         }     
     }
@@ -93,9 +117,16 @@
         padding: 20px 0px;
     }
     #about .grid{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         
 
             .image-container{

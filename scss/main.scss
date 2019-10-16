@@ -5,7 +5,8 @@ html{scroll-behavior:smooth}
 
 //General styles
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -16,9 +17,16 @@ html {
 }
 
 section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 100px 80px;
 
     
@@ -29,9 +37,15 @@ section {
 header {
     font-family: 'Poppins', sans-serif;
     position: fixed; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     height: 4rem;
     z-index: 1;
@@ -51,8 +65,11 @@ header {
     
     nav {  
         width: 40%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         margin-left: 12rem;
         list-style: none;
         
@@ -80,7 +97,9 @@ header {
 
 .hero{
     position: relative;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     min-height: 100vh;
     color: #fff;
@@ -108,10 +127,19 @@ header {
         background-color: rgba($primary-color, 0.8);    
     }
     .hero-content{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
 
         .moving-name {
             font-family: 'Patua One', cursive;
@@ -123,9 +151,12 @@ header {
             }
             &.name-header{
                 &.scroll1{
-                    animation: animatedNameOnScroll;
-                    animation-duration: 3s;
-                    animation-fill-mode: forwards;
+                    -webkit-animation: animatedNameOnScroll;
+                            animation: animatedNameOnScroll;
+                    -webkit-animation-duration: 3s;
+                            animation-duration: 3s;
+                    -webkit-animation-fill-mode: forwards;
+                            animation-fill-mode: forwards;
                 }     
             }
         }
@@ -134,8 +165,11 @@ header {
             font-size: 2.5rem;    
         }
         .contacts {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
             width: 70%;
             margin-top: 3rem;
     
@@ -143,8 +177,12 @@ header {
                 text-decoration: none;
                 i{
                     color: white;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    justify-content: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
     
                     &:hover{
                         color: $secondary-color;
@@ -160,10 +198,16 @@ header {
             width: 100%;
             //border: 1px red solid;
             margin: 10rem auto 0 auto;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             //flex-direction: row;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .button{
                 width: 150px;
                 height: 50px;
@@ -172,14 +216,26 @@ header {
                 text-align: center;
                 padding-top: 13px;
                 text-decoration: none;
-                animation: button;
-                animation-delay: 0.2s;
-                animation-duration: 3s;
-                animation-fill-mode: forwards;
+                -webkit-animation: button;
+                        animation: button;
+                -webkit-animation-delay: 0.2s;
+                        animation-delay: 0.2s;
+                -webkit-animation-duration: 3s;
+                        animation-duration: 3s;
+                -webkit-animation-fill-mode: forwards;
+                        animation-fill-mode: forwards;
                 &:hover{
                     border: 2px $secondary-color solid;
-                    transform: scale(1.2) perspective(1px);
+                    -webkit-transform: scale(1.2) perspective(1px);
+                            transform: scale(1.2) perspective(1px);
+                    -webkit-transition: all 0.5s ease;
+                    -o-transition: all 0.5s ease;
                     transition: all 0.5s ease;
+                }
+
+                @-webkit-keyframes button{
+                    0% {opacity: 0}
+                    100% {opacity: 1}
                 }
 
                 @keyframes button{
@@ -205,10 +261,19 @@ header {
 }
 @media (max-width: 576px){
     .hero{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .hero-content{
             h2{
                 width: 100%;
@@ -228,25 +293,42 @@ header {
     .grid{
         font-family: 'Poppins', sans-serif;
         width: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         margin-top: 3rem;
         
         .image-container{
             width: 20%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             margin-right: 2rem;
 
 
             .image{
-                width: 11rem;
+                width: 12rem;
                 height: 12rem;
                 border-radius: 5%;
                 border: solid 3px $secondary-color;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4%;
+                }
             }
             
         }
@@ -257,16 +339,23 @@ header {
                 color: $third-color;
                 line-height: 1.5;
                 font-size: 1.5rem;
+                text-align: justify;
             }
         }
         .toolbox-container{
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             width: 65%;
             /*height: 22rem;*/
             border: thin solid rgba(51,122,183,.1);
-            box-shadow: 0 12px 12px 0 #d3d3d3;
+            -webkit-box-shadow: 0 12px 12px 0 #d3d3d3;
+                    box-shadow: 0 12px 12px 0 #d3d3d3;
             font-size: 1.2rem;
             margin-top: 2rem;
             padding: 0 1.2rem 1.2rem 1.2rem;
@@ -304,9 +393,13 @@ header {
 
     .projects-container{
         width: 90%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         margin-top: 2rem;
     
             
@@ -320,8 +413,10 @@ header {
             text-align: left;
             border: thin solid rgba(51,122,183,.1);
             border-radius: 5px;
-            box-shadow: 0 12px 12px 0 #d3d3d3;
-            box-sizing: border-box;
+            -webkit-box-shadow: 0 12px 12px 0 #d3d3d3;
+                    box-shadow: 0 12px 12px 0 #d3d3d3;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
             background-color: #fff;
             text-decoration: none;
 
@@ -375,6 +470,8 @@ header {
 .contact-me{
     padding-top: 2rem;
     @include sectionHeading;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     
     
@@ -384,9 +481,15 @@ header {
 
 footer {
     font-family: 'Poppins', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: $nav-scroll-footer;
     padding: 40px 0;
     color: #fff;
