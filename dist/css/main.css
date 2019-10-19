@@ -10,7 +10,7 @@
   footer p {
     font-size: 0.8rem; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   header #nav {
     position: fixed;
     top: 3rem;
@@ -360,9 +360,8 @@ header {
     align-content: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-top: 3rem; }
+    margin-top: 1rem; }
     .about-me .grid .image-container {
-      width: 20%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -387,7 +386,7 @@ header {
       .about-me .grid .about p {
         color: #18330d;
         line-height: 1.5;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         text-align: justify; }
     .about-me .grid .toolbox-container {
       display: -webkit-box;

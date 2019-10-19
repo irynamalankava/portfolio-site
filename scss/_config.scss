@@ -29,14 +29,9 @@ $nav-scroll-footer: rgb(61, 53, 74);
 }
 
 @mixin mediaMd {
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 900px){
         @content
     }
 }
 
-@mixin mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1368px){
-        @content
-    }
-}
 
