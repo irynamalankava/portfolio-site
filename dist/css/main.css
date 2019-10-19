@@ -6,7 +6,9 @@
     font-size: 3.5rem; }
   #button-row .button {
     width: 130px;
-    height: 45px; } }
+    height: 45px; }
+  footer p {
+    font-size: 0.8rem; } }
 
 @media screen and (max-width: 768px) {
   header #nav {
@@ -516,6 +518,8 @@ footer {
   align-items: center;
   background-color: #3d354a;
   padding: 40px 0;
-  color: #fff; }
+  color: #fff;
+  flex-direction: column; }
   footer p {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-align: center; }

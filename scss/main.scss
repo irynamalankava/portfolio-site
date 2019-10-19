@@ -505,9 +505,11 @@ footer {
     background-color: $nav-scroll-footer;
     padding: 40px 0;
     color: #fff;
+    flex-direction: column;
 
     p{
         text-transform: uppercase;
+        text-align: center;
     
     }
 
