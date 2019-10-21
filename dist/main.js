@@ -1,5 +1,8 @@
-//window.onload()
 
+
+window.onload = function() {
+  document.querySelector("body").classList.add("all-loaded");
+}
 
 const menuBtn  = document.querySelector('.menu-btn');
 const menuNav  = document.querySelector('.menu');
