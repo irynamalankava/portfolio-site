@@ -7,6 +7,9 @@
     #name{
         font-size: 3.5rem;
     }
+    #position{
+        font-size: 1.5rem;
+    }
     #button-row .button{
         width: 130px;
         height: 45px;
@@ -137,14 +140,15 @@
                 height: 200px;
                 margin-right: 0;
                 margin-top: -2rem;
+                margin-bottom: -1rem;
             }
             .about{
                 width: 100%;
 
                 p{
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     margin-top: 2rem;
-                    text-align: center;  
+                    text-align: justify;  
                 }
             }
             #toolbox{
